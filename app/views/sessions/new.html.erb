@@ -1,0 +1,15 @@
+<h1>LOGIN</h1>
+<div class ="row">
+	<div class= "col-md-3">
+		<%= form_with(url: login_path, scope: :session, local: true) do |f| %>
+		<%=f.label :email%>
+		<%=f.text_field :email%>
+	
+
+		<%=f.label :password%>
+		<%=f.password_field :password%>
+		<%=f.submit "LOGIN", class: "btn btn-primary" %>
+		<% end %>
+		<p> New User?<%= link_to "sign up now!", signup_path %></p>
+	</div>
+</div>

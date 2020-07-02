@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Newapp</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  
+  </head>
+
+  <body>
+    <%= render 'layouts/navbar'%>
+    
+<!-- <a href="/about" class="badge badge-primary">aboutmywebsite</a>
+<a href="/contactus" class="badge badge-secondary">contactus for more</a>
+<a href="/faq" class="badge badge-success">frequently asked que</a>
+<a href="/home" class="badge badge-danger">lets go to home</a>
+<a href="/signup" class="badge badge-primary">signup</a>
+<a href="/login" class="badge badge-primary">login</a>
+   -->
+
+    
+    
+    <div class="container">
+    <% flash.each do|message_type,message| %>
+    <div class ="alert alert-<%= message_type%>">
+      <%= message %></div>
+    <% end %>
+    <%= yield %>
+  </div>
+    
+    
+ 
+
+  </body>
+</html>
